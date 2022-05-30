@@ -118,7 +118,7 @@ let numbersC;
 numbersB = true;
 numbersC = 0;
 num = 0;
-/*
+
 while (numbersB == true)
     {
     numbersA = undefined;
@@ -140,40 +140,70 @@ while (numbersB == true)
                         document.write ('ошибка ввода<br/>');
                         numbersB = false;
                         }
-    }*/
+    }
 
-//задание 9  не успеваю
+//задание 9
 
 let str,
     strNum,
     numbersMin,
-    numbersMax;
+    numbersMax,
+    numbersD;
 
 str = '4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57';
 strNum = 0;
-numbersA = 0;
+numbersB = 1;
+numbersMin = 20;
+numbersMax = 20;
 
 console.log ('строка: ',str);
+str = str + 'f';
 
-while (numbersA == undefined)
+do
     {
-    if (str[strNum] != ' ', str[strNum] != undefined)
-        {
-        numbersA = str[strNum];
-        if (numbersMin > numbersA)
-            {
-            numbersMin = numbersA;
-            }
-            else if (numbersMax < numbersA)
-                {
-                numbersMax = numbersA;
-                }
-                else
-                    {
-                    numbersA = undefined;
-                    }
-        }
+ if (str[strNum] == ' ')
+    {
+    numbersB = 1;
     }
+    else if (numbersB == 1)
+        {
+        numbersB = 2;
+        numbersC = Number (str[strNum]);
+        }
+        else
+            {
+            numbersD = (numbersC * 10) + Number (str[strNum]);
+            }
+if (numbersMin > numbersC)
+    {
+    numbersMin = numbersC;
+    }
+if (numbersMax < numbersD)
+    {
+    numbersMax = numbersD;
+    }
+strNum = strNum + 1;
+    } while (str[strNum] != 'f')
 
 console.log ('минимальное число: ',numbersMin);
 console.log ('масимальное число: ',numbersMax);
+
+//задание 10
+
+str = prompt ('введите число');
+strNum = 0;
+str = str + 'f';
+numbersA = 0;
+numbersB = 0;
+
+while (str[strNum] != 'f')
+    {
+    numbersA = numbersA + Number (str[strNum]);
+    numbersB ++;
+    
+    console.log ('состоит из цифр: ',str[strNum]);
+    strNum ++;
+    }
+
+console.log ('количество цифр: ',numbersB);
+console.log ('сумма цифр: ',numbersA);
